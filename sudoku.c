@@ -43,20 +43,23 @@ void print_node(Node* n){
     printf("\n");
 }
 
-int is_valid(Node* n){
-   int i ,j;
-   for(i=0;i<9;i++){
-      int row[10] = {0};
-      for (j=0;j<9;j++){
-         int num = n->sudo[i][j];
-         if(num!=0){
-            return 0;
-         }
-         row[num] = 1;
-      }
-   }
-   return 1;
+int is_valid(Node* n) {
+    int i, j;
+    for (i = 0; i < 9; i++) {
+        int row[10] = {0};
+        for (j = 0; j < 9; j++) {
+            int num = n->sudo[i][j];
+            if (num != 0) {
+                if (row[num] == 1) {
+                    return 0;
+                }
+                row[num] = 1;  
+            }
+        }
+    }
+    return 1;  
 }
+
 
 
 List* get_adj_nodes(Node* n){
