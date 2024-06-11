@@ -81,7 +81,7 @@ List* get_adj_nodes(Node* n) {
                 found = 1;
             }
         }
-    }
+    
 
     return list;
 }
