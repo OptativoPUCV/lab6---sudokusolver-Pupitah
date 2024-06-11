@@ -114,6 +114,7 @@ Node* DFS(Node* initial, int* cont) {
         (*cont)++;
 
         if (is_final(current)) {
+            free(s);
             return current;
         }
 
@@ -125,12 +126,14 @@ Node* DFS(Node* initial, int* cont) {
         }
 
         clean(adj_nodes);
-        free(current);  
+        free(current);
     }
 
+    free(s);
 
     return NULL;
 }
+
 
 
 
