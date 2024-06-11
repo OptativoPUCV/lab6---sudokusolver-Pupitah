@@ -44,22 +44,66 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-
-    return 1;
+   int i ,j;
+   for(i=0;i<9;i++){
+      int row[10] = {0};
+      for (j=0;j<9;j++){
+         int num = n->sudo[i][j];
+         if(num!=0){
+            return 0;
+         }
+         row[num] = 1;
+      }
+   }
+   return 1;
 }
 
 
 List* get_adj_nodes(Node* n){
     List* list=createList();
+   int found = 0;
+
+   for(int i = 0;i<9 && !found;i++){
+      for(int j = 0; j < 9 && !found; j++){
+
+         if(n->sudo[i][j]==0){
+            for(int k=1; k<=9;k++){
+            Node* new_node = copy(n);
+            new_node->sudo[i][j] = k;
+            if(is_valid(new_node)){
+               pushBack(list, new_node);
+            }
+         }
+         found = 1;   
+      }
+   }
+   }
     return list;
 }
 
 
 int is_final(Node* n){
-    return 0;
+   for (int i = 0; i < 9; i++){
+
+      for (int j = 0; j < 9; j++){
+         if (n->sudo[i][j]==0){
+            return 0;
+         }
+      }
+   }
+    return 1;
 }
 
 Node* DFS(Node* initial, int* cont){
+   Stack* s = createStack();
+   push(s, initial);
+   *cont = 0;
+
+   while (!is_empty(s)){
+      Node* current = (Node*)top(s);
+      pop(s);
+      
+   }
   return NULL;
 }
 

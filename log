@@ -1,0 +1,15 @@
+Tue 11 Jun 2024 10:49:31 PM UTC: 
+ sudoku.c | 46 +++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 45 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:49:11: error: variable ‘row’ set but not used [-Werror=unused-but-set-variable]
+   49 |       int row[10] = {0};
+      |           ^~~
+sudoku.c: In function ‘DFS’:
+sudoku.c:103:13: error: unused variable ‘current’ [-Werror=unused-variable]
+  103 |       Node* current = (Node*)top(s);
+      |             ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+a9005d5
