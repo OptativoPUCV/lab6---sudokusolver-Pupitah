@@ -114,7 +114,6 @@ Node* DFS(Node* initial, int* cont) {
         (*cont)++;
 
         if (is_final(current)) {
-            freeStack(s);  // Liberamos el stack antes de retornar
             return current;
         }
 
@@ -126,10 +125,9 @@ Node* DFS(Node* initial, int* cont) {
         }
 
         clean(adj_nodes);
-        free(current);  // Liberamos el nodo actual que se ha procesado
+        free(current);  
     }
 
-    freeStack(s);  // Liberamos el stack al final
 
     return NULL;
 }
