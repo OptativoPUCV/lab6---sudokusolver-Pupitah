@@ -95,3 +95,20 @@ Tue 11 Jun 2024 11:02:40 PM UTC:
  tests:  7|2
 total_score: 50/70
 45208a0
+Tue 11 Jun 2024 11:03:07 PM UTC: 
+ sudoku.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c:86:5: error: expected identifier or ‘(’ before ‘return’
+   86 |     return list;
+      |     ^~~~~~
+sudoku.c:87:1: error: expected identifier or ‘(’ before ‘}’ token
+   87 | }
+      | ^
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:84:5: error: control reaches end of non-void function [-Werror=return-type]
+   84 |     }
+      |     ^
+cc1: all warnings being treated as errors
+Compilation failed
+6f23dab
