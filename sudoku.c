@@ -99,13 +99,31 @@ Node* DFS(Node* initial, int* cont){
    push(s, initial);
    *cont = 0;
 
-   while (!is_empty(s)){
-      Node* current = (Node*)top(s);
-      pop(s);
-      
+   while (!is_empty(s)) {
+           Node* current = (Node*)top(s);
+           pop(s);
+           (*cont)++;
+
+           if (is_final(current)) {
+               return current;
+           }
+
+           List* adj_nodes = get_adj_nodes(current);
+           while (!is_empty(adj_nodes)) {
+               Node* adj_node = (Node*)top(adj_nodes);  
+               pop(adj_nodes);            
+               push(s, adj_node);
+           }
+
+           clean(adj_nodes);
+           free(current);
+       }
+
+       free(s);
+
+       return NULL;
    }
-  return NULL;
-}
+
 
 
 

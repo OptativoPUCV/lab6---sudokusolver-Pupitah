@@ -13,3 +13,14 @@ sudoku.c:103:13: error: unused variable ‘current’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 a9005d5
+Tue 11 Jun 2024 10:50:47 PM UTC: 
+ sudoku.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:49:11: error: variable ‘row’ set but not used [-Werror=unused-but-set-variable]
+   49 |       int row[10] = {0};
+      |           ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+f180b05
